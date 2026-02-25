@@ -14,15 +14,16 @@ def encode(text):
     Encodes the given text into Morse code.
     Words are separated by a pipe (|) and letters by a space.
     """
-    pass  # YOUR CODE HERE
-
+    words = text.split()
+    encoded_words = [encode_word(word) for word in words]
+    return "|".join(encoded_words)
 
 def encode_word(word):
     """
     Encodes a single word into Morse code.
     Letters are separated by a space.
     """
-    pass  # YOUR CODE HERE
+    return " ".join(MORSE[char.upper()] for char in word if char.upper() in MORSE)
 
 
 if __name__ == "__main__":
